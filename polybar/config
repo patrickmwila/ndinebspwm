@@ -1,0 +1,152 @@
+[colors]
+    bg = #f0000000
+    fg = #fbf1c7
+    gray = #bdae93    
+    red = #fb4934
+    green = #b8bb26
+    yellow = #fabd2f
+    blue = #83a598
+    magenta = #d3869b
+    cyan = #8ec07c
+    orange = #fe8019
+
+[bar/example]
+    wm-restack = bswpm
+    width = 100%
+    height = 23
+    radius = 0.0
+    fixed-center = false
+    override-redirect = true
+    background = ${colors.bg}
+    foreground = ${colors.fg}
+    padding-left = .5
+    padding-right = .5
+    module-margin-left = 1
+    module-margin-right = 1
+    cursor-click = pointer
+    eursor-scroll = ns-resize
+    font-0 = Montserrat:weight=SemiBold:size=12;2
+    font-1 = Hack Nerd Font:size=12;2
+    font-2 = Montserrat:weight=SemiBold:size=12;2
+    font-3 = Font Awesome 5 Free:pixelsize=12;2
+    font-4 = Font Awesome 5 Free Solid:pixelsize=12;2
+    font-5 = Font Awesome 5 Brands:pixelsize=12;2
+
+    modules-left = bspwm
+    ;modules-center = date
+    modules-right = eth wlan pulseaudio date battery
+    ;modules-right = eth wlan pulseaudio battery
+    separator = 
+
+;; MODULES ;;
+
+[module/pulseaudio]
+    type = internal/pulseaudio
+    format-volume = <label-volume> <bar-volume>
+    label-volume =   %percentage%%
+    label-volume-foreground = ${root.foreground}
+    label-muted =  muted!
+    label-muted-foreground = #666
+    bar-volume-width = 10
+    bar-volume-foreground-0 = #55aa55
+    bar-volume-foreground-1 = #55aa55
+    bar-volume-foreground-2 = #55aa55
+    bar-volume-foreground-3 = #55aa55
+    bar-volume-foreground-4 = #55aa55
+    bar-volume-foreground-5 = #f5a70a
+    bar-volume-foreground-6 = #ff5555
+    bar-volume-gradient = false
+    bar-volume-indicator = |
+    bar-volume-indicator-font = 2
+    bar-volume-fill = ─
+    bar-volume-fill-font = 2
+    bar-volume-empty = ─
+    bar-volume-empty-font = 2
+    bar-volume-empty-foreground = ${colors.foreground-alt}
+
+[module/wlan]
+    type = internal/network
+    interface = wlp3s0
+    interval = 3.0
+    format-connected = <ramp-signal>  <label-connected>
+    format-connected-underline = #9f78e1
+    ;label-connected = %essid%
+    label-connected = [ wlo1 ]
+    format-disconnected =
+    ramp-signal-0 = 
+    ramp-signal-1 = 
+    ramp-signal-2 = 
+    ramp-signal-3 = 
+    ramp-signal-4 = 
+    ramp-signal-foreground = ${colors.foreground-alt}
+
+    [module/eth]
+    type = internal/network
+    interface = enp0s25
+    interval = 3.0
+    format-connected-underline = #55aa55
+    format-connected-prefix = " "
+    format-connected-prefix-foreground = ${colors.foreground-alt}
+    ;label-connected = %local_ip%
+    label-connected = [ enp0s25 ]
+    format-disconnected =
+
+[module/date]
+    type = internal/date
+    interval = 5
+    date = %a, %b %d
+    time = %k:%M
+    label = %{T3}%date%%{T-} %time%
+
+[module/battery]
+    type = internal/battery
+    battery = BAT0
+    adapter = ADP1
+    full-at = 98
+    format-charging = <label-charging>
+    format-discharging = <animation-discharging>    <label-discharging> 
+    format-discharging-underline = ${self.format-charging-underline}
+    format-full-prefix = " "
+    format-full-prefix-foreground = ${colors.fg}
+    format-full-underline = ${self.format-charging-underline}
+    ramp-capacity-0 = 
+    ramp-capacity-1 = 
+    ramp-capacity-2 = 
+    ramp-capacity-foreground = ${colors.fg}
+    animation-charging-0 = 
+    animation-charging-1 = 
+    animation-charging-2 = 
+    animation-charging-foreground = ${colors.fg}
+    animation-charging-framerate = 750
+    animation-discharging-0 = 
+    animation-discharging-1 = 
+    animation-discharging-2 = 
+    animation-discharging-foreground = ${colors.fg}
+
+[module/bspwm]
+    type = internal/bspwm
+    pin-workspaces = true
+    inline-mode = false
+    enable-click = true
+    enable-scroll = true
+    reverse-scroll = true
+    fuzzy-match = true
+    ws-icon-0 = code;
+    ws-icon-1 = office;
+    ws-icon-2 = graphics;
+    ws-icon-3 = mail;
+    ws-icon-4 = web;
+    ws-icon-default = " "
+    format = <label-state> <label-mode>
+    label-monitor = %name%
+    label-dimmed-empty-foreground = ${colors.gray}
+    label-focused = %icon%
+    label-focused-foreground = ${colors.orange}
+    label-occupied = %icon%
+    label-urgent = %icon%
+    label-urgent-foreground = ${colors.red}
+    label-empty = %icon%
+    label-empty-foreground = ${colors.gray}
+
+[settings]
+    screenchange-reload = true
