@@ -3,11 +3,11 @@
 
 # lock screen
 alt + l
-  i3lock -i /home/admin/Pictures/wallpapers/i3lock.png
+  i3lock -i /home/patrick/Pictures/wallpapers/i3lock.png
 
 # terminal emulator
 super + Return
-  konsole
+  kitty
 
 # program launcher
 super + p
