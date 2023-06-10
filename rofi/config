@@ -1,4 +1,2 @@
-rofi.theme: ~/.config/rofi/themes/dt-dmenu.rasi
-
-
-
+show-entry: false;
+show-icons: false;

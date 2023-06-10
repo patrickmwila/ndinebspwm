@@ -6,23 +6,28 @@
  */
 
 * {
-    background-color:            #282c34;
-    border-color:                #282c34;
+    /* background-color:            #282c34; */
+    background-color:            #000;
+    border-color:                #a87532;
     text-color:                  #bbc2cf;
-    font:                        "SauceCodePro Nerd Font Mono 12";
-    prompt-font:                 "Ubuntu Bold 9";
-    prompt-background:           #51afef;
+    /* font:                        "SauceCodePro Nerd Font Mono 13"; */
+    font:                        "Segoe UI Bold Italic 12";
+    /* prompt-font:                 "Ubuntu Bold 9"; */
+    prompt-font:                 "Segoe UI Bold Italic 12";
+    /*prompt-background:           #51afef;*/
+    prompt-background:           #a87532;
     prompt-foreground:           #282c34;
     prompt-padding:              4px;
     alternate-normal-background: #1c1f24;
     alternate-normal-foreground: @text-color;
-    selected-normal-background:  #ae3f3e;
+    /*selected-normal-background:  #ae3f3e;*/
+    selected-normal-background:  #a87532;
     selected-normal-foreground:  #ffffff;
     spacing:                     3;
 }
 #window {
-    border:  1;
-    padding: 5;
+    border:  2;
+    padding: 2;
 }
 #mainbox {
     border:  0;
@@ -35,13 +40,13 @@
 #listview {
     fixed-height: 0;
     border:       2px dash 0px 0px ;
-    spacing:      2px ;
+    /*spacing:      2px ;*/
     scrollbar:    true;
     padding:      2px 0px 0px ;
 }
 #element {
-    border:  0;
-    padding: 1px ;
+    border:  0 ;
+    padding: 5px ;
 }
 #element.selected.normal {
     background-color: @selected-normal-background;

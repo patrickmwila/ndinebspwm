@@ -3,7 +3,11 @@
 
 # lock screen
 alt + l
-  i3lock -i /home/patrick/Pictures/wallpapers/i3lock.png
+  lock.sh
+
+# screenshot
+Print
+  flameshot launcher
 
 # terminal emulator
 super + Return
@@ -11,7 +15,7 @@ super + Return
 
 # program launcher
 super + p
-	rofi -show drun -show-icons
+  rofi -show drun -show-icons
 
 super + shift + p
   rofi -show run -show-icons 
