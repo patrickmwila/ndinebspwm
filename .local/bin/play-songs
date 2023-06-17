@@ -1,0 +1,9 @@
+#!/bin/bash
+
+audio_files=(~/Music/*.mp3)
+shuffled_files=($(shuf -e "${audio_files[@]}"))
+
+for file in "${shuffled_files[@]}"; do
+    ffplay "$file"
+done
+

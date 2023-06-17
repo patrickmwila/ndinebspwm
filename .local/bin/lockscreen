@@ -1,0 +1,7 @@
+#!/bin/bash
+
+# Run i3lock
+i3lock -i ~/Pictures/wallpaper/i3lock.png
+
+# Put the computer to sleep
+systemctl suspend
